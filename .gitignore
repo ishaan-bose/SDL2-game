@@ -19,3 +19,6 @@ Sublime text/bin/debug/libSDL2_image.so
 Sublime text/bin/release/libSDL2_image.so
 Sublime text/bin/debug/libSDL2-2.so
 Sublime text/bin/release/libSDL2-2.so
+
+Sublime text/SDL2 tutorial.sublime-project
+Sublime text/SDL2 tutorial.sublime-workspace
