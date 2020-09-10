@@ -1,7 +1,7 @@
 #include "Entity.hpp"
 
 Entity::Entity(float p_x, float p_y, float p_w, float p_h, float p_mw, float p_mh, SDL_Texture *p_tex)
-	:x(p_x), y(p_y), magw(p_mw), magh(p_mh), main_tex(p_tex)
+	:pos.x(p_x), pos.y(p_y), magw(p_mw), magh(p_mh), main_tex(p_tex)
 {
 	currentFrame.x = 0;
 	currentFrame.y = 0;
@@ -11,30 +11,30 @@ Entity::Entity(float p_x, float p_y, float p_w, float p_h, float p_mw, float p_m
 
 float Entity::getX()
 {
-	return x;
+	return pos.x;
 }
 
 float Entity::getY()
 {
-	return y;
+	return pos.y;
 }
 
 
 void Entity::setX(float p_x)
 {
-	x = p_x;
+	pos.x = p_x;
 }
 
 
 void Entity::setY(float p_y)
 {
-	y = p_y;
+	pos.y = p_y;
 }
 
 void Entity::setXY(float p_x, float p_y)
 {
-	x = p_x;
-	y = p_y;
+	pos.x = p_x;
+	pos.y = p_y;
 }
 
 SDL_Texture* Entity::getTex()
@@ -61,6 +61,6 @@ float Entity::getMagh()
 
 void Entity::addVector(Vector2 v)
 {
-	x += v.getX();
-	y += v.getY();
+	pos.x += v.getX();
+	pos.y += v.getY();
 }

@@ -4,6 +4,7 @@
 #include <SDL2/SDL_image.h>
 
 #include "Vector2.hpp"
+#include "Position.hpp"
 
 class Entity
 {
@@ -27,7 +28,7 @@ public:
 
 private:
 	//position
-	float x, y;
+	Position pos;
 	//magnify width and height
 	float magw, magh;
 	//how much of the image should be used/cropped and what part
