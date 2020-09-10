@@ -48,7 +48,7 @@ int main(int argc, char *args[])
 	//Game Loop!!
 	while(gameRunning)
 	{
-	//get input and events
+		//get input and events
 		while(SDL_PollEvent(&event))
 		{
 			if(event.type == SDL_QUIT)
