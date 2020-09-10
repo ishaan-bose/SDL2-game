@@ -1,7 +1,7 @@
 #include "Entity.hpp"
 
 Entity::Entity(float p_x, float p_y, float p_w, float p_h, float p_mw, float p_mh, SDL_Texture *p_tex)
-	:pos.x(p_x), pos.y(p_y), magw(p_mw), magh(p_mh), main_tex(p_tex)
+	:pos(p_x, p_y), magw(p_mw), magh(p_mh), main_tex(p_tex)
 {
 	currentFrame.x = 0;
 	currentFrame.y = 0;
