@@ -66,17 +66,14 @@ int main(int argc, char *args[])
 						break;
 					//move left
 					case SDLK_LEFT:
-
 						mario->addVector(Vector2(-5,0));
 						break;
 					//move up
 					case SDLK_UP:
-
 						mario->addVector(Vector2(0,-5));
 						break;
 					//move down
 					case SDLK_DOWN:
-
 						mario->addVector(Vector2(0,5));
 						break;
 				}
