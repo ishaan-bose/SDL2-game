@@ -5,6 +5,7 @@
 #include "Entity.hpp"
 #include "Vector2.hpp"
 #include "AnimatedEntity.hpp"
+#include "Collider.hpp"
 
 int main(int argc, char *args[])
 {
@@ -36,6 +37,8 @@ int main(int argc, char *args[])
 	
 	std::vector<Entity> entities;
 
+	entities.push_back(Entity( (14 * 4 * 7) , (14 * 4) * 8.5, 14, 14, 4, 4, grassTexture) );
+
 	AnimatedEntity *mario = new AnimatedEntity(0,(14 * 4) * 8.5 - 8,12,16,4,4,marioTexture);
 	Vector2 mario_vel(5,0);
 
@@ -62,14 +65,21 @@ int main(int argc, char *args[])
 				{
 					//move right
 					case SDLK_RIGHT:
-						mario->addVector(Vector2(5,0));
+						if(mario->getCollider().checkRight())
+							break;
+						else
+							mario->addVector(Vector2(5,0));
 						break;
 					//move left
 					case SDLK_LEFT:
-						mario->addVector(Vector2(-5,0));
+						if(mario->getCollider().checkLeft())
+							break;
+						else
+							mario->addVector(Vector2(-5,0));
 						break;
 					//move up
 					case SDLK_UP:
+						if(mario->getCollider().checkUp())
 						mario->addVector(Vector2(0,-5));
 						break;
 					//move down

@@ -14,7 +14,8 @@ void AnimatedEntity::pushTexture(SDL_Texture* p_tex)
 
 void AnimatedEntity::setCurrentTexture(int textureIndex)
 {
-	if(textureIndex > textures.size()-1)
+	long unsigned int textureIndex2 = textureIndex;
+	if(textureIndex2 > textures.size()-1)
 		return;
 	else
 	{

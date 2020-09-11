@@ -1,6 +1,7 @@
 #pragma once
 
 #include <vector>
+#include <iterator>
 
 #include "Position.hpp"
 
@@ -9,12 +10,12 @@ class BoxCollider
     //the relative zero, zero position. Relative to the entity
     Position pos00;
     
-    Position downleft;
-    Position downright;
-    Position upleft;
-    Position upright;
+    std::vector<Position> upDetectors;
+    std::vector<Position> downDetectors;
+    std::vector<Position> leftDetectors;
+    std::vector<Position> rightDetectors;
     
-    static std::vector<BoxCollider> colliders;
+    static std::vector<BoxCollider> all_colliders;
     
 public:
     
@@ -22,6 +23,13 @@ public:
     
     void updateRelativePosition(float p_x, float p_y);
     
+    //getters
+    Position getUpLeft();
+    Position getDownLeft();
+    Position getUpRight();
+    Position getDownRight();
+    
+    //checkers
     bool checkLeft() const;
     bool checkRight() const;
     bool checkUp() const;
