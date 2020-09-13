@@ -1,5 +1,8 @@
 #include "Collider.hpp"
 
+//declariong the all colliders vector since it is static
+std::vector<BoxCollider> BoxCollider::all_colliders;
+
 BoxCollider::BoxCollider(float zero_x,float zero_y,float p_w,float p_h)
     :pos00(zero_x, zero_y)
 {
@@ -132,5 +135,4 @@ bool BoxCollider::checkUp() const
     
     return false;
 }
-
 //i will add check down function later on

@@ -79,9 +79,11 @@ int main(int argc, char *args[])
 						break;
 					//move up
 					case SDLK_UP:
-						if(mario->getCollider().checkUp())
-						mario->addVector(Vector2(0,-5));
+					if(mario->getCollider().checkUp())
 						break;
+					else
+						mario->addVector(Vector2(0,-5));
+					break;
 					//move down
 					case SDLK_DOWN:
 						mario->addVector(Vector2(0,5));
