@@ -34,7 +34,7 @@ public:
     //temporarily commented off this portion
     //getters
     Position getUpLeft();
-    /*
+    
     Position getDownLeft();
     Position getUpRight();
     Position getDownRight();
@@ -44,5 +44,5 @@ public:
     bool checkRight() const;
     bool checkUp() const;
     bool checkDown() const;
-    */
+    
 };
