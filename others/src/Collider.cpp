@@ -28,4 +28,19 @@ Position BoxCollider::getUpLeft()
     return upLeft;
 }
 
+Position BoxCollider::getUpRight()
+{
+    return upRight;
+}
+
+Position BoxCollider::getdownLeft()
+{
+    return downLeft;
+}
+
+Position BoxCollider::getdownRight()
+{
+    return downRight;
+}
+
 //i will add check down function later on
