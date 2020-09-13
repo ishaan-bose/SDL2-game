@@ -2,6 +2,8 @@
 
 #include <SDL2/SDL.h>
 #include <SDL2/SDL_image.h>
+//only for debugging
+#include <iostream>
 
 #include "Vector2.hpp"
 #include "Position.hpp"

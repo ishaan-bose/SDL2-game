@@ -1,3 +1,9 @@
+//I am using the collision detection method AABB that stands
+//for Axis Aligned Bounding Box.hpp"
+//This method is used as long as the colliders are squares/rectangles
+//and they dont rotate.Also the sides of the squares/rectangles should
+//be parallel to the x and y axis
+
 #pragma once
 
 #include <vector>
@@ -10,10 +16,12 @@ class BoxCollider
     //the relative zero, zero position. Relative to the entity
     Position pos00;
     
-    std::vector<Position> upDetectors;
-    std::vector<Position> downDetectors;
-    std::vector<Position> leftDetectors;
-    std::vector<Position> rightDetectors;
+    Position upLeft;
+    Position upRight;
+    Position downLeft;
+    Position downRight;
+    
+    short width, height;
     
     static std::vector<BoxCollider> all_colliders;
     
@@ -23,8 +31,10 @@ public:
     
     void updateRelativePosition(float p_x, float p_y);
     
+    //temporarily commented off this portion
     //getters
     Position getUpLeft();
+    /*
     Position getDownLeft();
     Position getUpRight();
     Position getDownRight();
@@ -34,4 +44,5 @@ public:
     bool checkRight() const;
     bool checkUp() const;
     bool checkDown() const;
+    */
 };

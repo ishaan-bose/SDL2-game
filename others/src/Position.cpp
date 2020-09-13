@@ -7,6 +7,6 @@ bool Position::operator==(Position& other) const
 
 void Position::change_pos(float p_x, float p_y)
 {
-    x += p_x;
-    y += p_y;
+    x = p_x;
+    y = p_y;
 }

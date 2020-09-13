@@ -65,23 +65,23 @@ int main(int argc, char *args[])
 				{
 					//move right
 					case SDLK_RIGHT:
-						if(mario->getCollider().checkRight())
-							break;
-						else
+						//if(mario->getCollider().checkRight())//
+							//break;
+						//else
 							mario->addVector(Vector2(5,0));
 						break;
 					//move left
 					case SDLK_LEFT:
-						if(mario->getCollider().checkLeft())
-							break;
-						else
+						//if(mario->getCollider().checkLeft())
+							//break;
+						//else
 							mario->addVector(Vector2(-5,0));
 						break;
 					//move up
 					case SDLK_UP:
-					if(mario->getCollider().checkUp())
-						break;
-					else
+					//if(mario->getCollider().checkUp())
+						//break;
+					//else
 						mario->addVector(Vector2(0,-5));
 					break;
 					//move down
