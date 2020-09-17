@@ -7,6 +7,6 @@ struct Position
         :x(p_x), y(p_y) {}
     Position() = default;
     
-    bool operator==(Position& other) const;
+    bool operator==(Position other) const;
     void change_pos(float p_x, float p_y);
 };

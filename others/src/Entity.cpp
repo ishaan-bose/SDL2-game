@@ -69,14 +69,8 @@ void Entity::addVector(Vector2 v)
 	pos.x += v.getX();
 	pos.y += v.getY();
 	
-	std::cout << "Entity position x is: " << pos.x << "\n";
-	std::cout << "Entity position y is: " << pos.y << "\n\n";
-	
 	collider.updateRelativePosition(pos.x, pos.y);
 	
-	//for debugging only
-	std::cout << "collider position x is: " << getCollider().getUpLeft().x << "\n";
-	std::cout << "collider position y is: " << getCollider().getUpLeft().y << "\n\n";
 }
 
 BoxCollider Entity::getCollider()

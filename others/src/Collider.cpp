@@ -1,8 +1,9 @@
 //I am now implementing the AABB method
 
 #include "Collider.hpp"
+#include <iostream>
 
-//declariong the all colliders vector since it is static
+//declaring the all colliders set since it is static
 std::vector<BoxCollider> BoxCollider::all_colliders;
 
 BoxCollider::BoxCollider(float zero_x,float zero_y,float p_w,float p_h)
@@ -23,24 +24,69 @@ void BoxCollider::updateRelativePosition(float p_x, float p_y)
     downRight.change_pos(p_x + width, p_y + height);    
 }
 
-Position BoxCollider::getUpLeft()
+//getters
+Position BoxCollider::getUpLeft() const
 {
     return upLeft;
 }
 
-Position BoxCollider::getUpRight()
+Position BoxCollider::getUpRight() const
 {
     return upRight;
 }
 
-Position BoxCollider::getdownLeft()
+Position BoxCollider::getDownLeft() const
 {
     return downLeft;
 }
 
-Position BoxCollider::getdownRight()
+Position BoxCollider::getDownRight() const
 {
     return downRight;
 }
 
-//i will add check down function later on
+bool operator==(BoxCollider lhs, BoxCollider rhs)
+{
+    if(lhs.getUpLeft() == rhs.getUpLeft() && lhs.getDownLeft() == rhs.getDownLeft() &&
+    lhs.getUpRight() == rhs.getUpRight() && lhs.getDownRight() == rhs.getDownRight())
+    {
+        return true;
+    }
+    return false;
+}
+
+//checkers
+bool checkLeft()
+{
+    for(int i = 0; i < all_colliders.size(); i++)
+    {
+        if(*this == all_colliders[i])
+            continue;
+        else
+        {
+            if(upLeft.x < all_colliders[i].getUpLeft().x)
+            {
+                std::cout << "collision occured\n";
+                return true;
+            }
+        }
+    }
+    return false;
+}
+
+/*
+bool checkRight()
+{
+    
+}
+
+bool checkUp()
+{
+    
+}
+
+bool checkDown()
+{
+    
+}
+*/

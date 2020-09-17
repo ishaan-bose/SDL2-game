@@ -1,6 +1,6 @@
 #include "Position.hpp"
 
-bool Position::operator==(Position& other) const
+bool Position::operator==(Position other) const
 {
     return ((x==other.x) && (y==other.y));
 }

@@ -41,6 +41,12 @@ int main(int argc, char *args[])
 
 	AnimatedEntity *mario = new AnimatedEntity(0,(14 * 4) * 8.5 - 8,12,16,4,4,marioTexture);
 	Vector2 mario_vel(5,0);
+	
+	BoxCollider col1(0,0,3,7);
+	BoxCollider col2(0,0,3,7);
+	BoxCollider col3(0,2,3,7);
+	
+	std::cout << std::boolalpha <<(col1 == col2) << (col3 == col1) << std::endl;
 
 	//setting the grass blocks in a vector
 	for(int i = 0; i < 21; i++)
@@ -67,22 +73,25 @@ int main(int argc, char *args[])
 					case SDLK_RIGHT:
 						//if(mario->getCollider().checkRight())//
 							//break;
-						//else
+						//else{
 							mario->addVector(Vector2(5,0));
+						//}
 						break;
 					//move left
 					case SDLK_LEFT:
-						//if(mario->getCollider().checkLeft())
-							//break;
-						//else
+						if(mario->getCollider().checkLeft())
+							break;
+						else{
 							mario->addVector(Vector2(-5,0));
+						}
 						break;
 					//move up
 					case SDLK_UP:
 					//if(mario->getCollider().checkUp())
 						//break;
-					//else
+					//else{
 						mario->addVector(Vector2(0,-5));
+					//}
 					break;
 					//move down
 					case SDLK_DOWN:

@@ -23,7 +23,7 @@ class BoxCollider
     
     short width, height;
     
-    static std::vector<BoxCollider> all_colliders;
+    static std::vector <BoxCollider> all_colliders;
     
 public:
     
@@ -33,16 +33,20 @@ public:
     
     //temporarily commented off this portion
     //getters
-    Position getUpLeft();
+    Position getUpLeft() const;
+    Position getDownLeft() const;
+    Position getUpRight() const;
+    Position getDownRight() const;
     
-    Position getDownLeft();
-    Position getUpRight();
-    Position getDownRight();
+    friend bool operator==(BoxCollider lhs, BoxCollider rhs);
     
     //checkers
-    bool checkLeft() const;
-    bool checkRight() const;
-    bool checkUp() const;
-    bool checkDown() const;
+    bool checkLeft();
+    /*
+    bool checkRight();
+    bool checkUp();
+    bool checkDown();
+    */
+    
     
 };
