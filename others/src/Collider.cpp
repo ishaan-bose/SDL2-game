@@ -60,7 +60,7 @@ bool checkLeft()
 {
     for(int i = 0; i < all_colliders.size(); i++)
     {
-        if(*this == all_colliders[i])
+        if(*this == BoxCollider::all_colliders[i])
             continue;
         else
         {
