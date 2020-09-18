@@ -55,18 +55,31 @@ bool operator==(BoxCollider lhs, BoxCollider rhs)
     return false;
 }
 
+bool BoxCollider::has_collided(BoxCollider other)
+{
+    //check collision on x axis
+    if(upLeft.x < other.getUpRight().x && upRight.x > other.getUpLeft().x)
+    {
+        if(upLeft.y < other.getDownLeft().y && downLeft.y > other.getUpLeft().y)
+        {
+            return true;
+        }
+    }
+    
+    return false;
+}
+
 //checkers
-bool checkLeft()
+bool BoxCollider::checkLeft()
 {
     for(int i = 0; i < all_colliders.size(); i++)
     {
-        if(*this == BoxCollider::all_colliders[i])
+        if(*this == all_colliders[i])
             continue;
         else
         {
-            if(upLeft.x < all_colliders[i].getUpLeft().x)
+            if(has_collided(all_colliders[i]) && upLeft.x > all_colliders[i].getUpLeft().x)
             {
-                std::cout << "collision occured\n";
                 return true;
             }
         }
@@ -74,19 +87,54 @@ bool checkLeft()
     return false;
 }
 
-/*
-bool checkRight()
+
+bool BoxCollider::checkRight()
 {
-    
+    for(int i = 0; i < all_colliders.size(); i++)
+    {
+        if(*this == all_colliders[i])
+            continue;
+        else
+        {
+            if(has_collided(all_colliders[i]) && upLeft.x < all_colliders[i].getUpLeft().x)
+            {
+                return true;
+            }
+        }
+    }
+    return false;
 }
 
-bool checkUp()
+bool BoxCollider::checkUp()
 {
-    
+    for(int i = 0; i < all_colliders.size(); i++)
+    {
+        if(*this == all_colliders[i])
+            continue;
+        else
+        {
+            if(has_collided(all_colliders[i]) && upLeft.y < all_colliders[i].getUpLeft().y)
+            {
+                return true;
+            }
+        }
+    }
+    return false;
 }
 
-bool checkDown()
+bool BoxCollider::checkDown()
 {
-    
+    for(int i = 0; i < all_colliders.size(); i++)
+    {
+        if(*this == all_colliders[i])
+            continue;
+        else
+        {
+            if(has_collided(all_colliders[i]) && upLeft.y > all_colliders[i].getUpLeft().y)
+            {
+                return true;
+            }
+        }
+    }
+    return false;
 }
-*/

@@ -23,7 +23,7 @@ class BoxCollider
     
     short width, height;
     
-    static std::vector <BoxCollider> all_colliders;
+    static std::vector<BoxCollider> all_colliders;
     
 public:
     
@@ -41,12 +41,12 @@ public:
     friend bool operator==(BoxCollider lhs, BoxCollider rhs);
     
     //checkers
+    bool has_collided(BoxCollider other);
+    
     bool checkLeft();
-    /*
     bool checkRight();
     bool checkUp();
     bool checkDown();
-    */
     
     
 };
