@@ -12,6 +12,3 @@ Sublime text/bin/debug/res
 Sublime text/bin/release/res
 Sublime text/bin/debug/*.so
 Sublime text/bin/release/*.so
-
-Sublime text/SDL2 tutorial.sublime-project
-Sublime text/SDL2 tutorial.sublime-workspace

@@ -7,14 +7,12 @@
 
 #include "Vector2.hpp"
 #include "Position.hpp"
-#include "Collider.hpp"
+#include ".hpp"
 
 class Entity
 {
 public:
 	Entity(float p_x, float p_y, float p_w, float p_h, float p_mw, float p_mh, SDL_Texture *p_tex);
-
-	BoxCollider getCollider();
 
 	float getX();
 	float getY();
@@ -36,8 +34,6 @@ private:
 	Position pos;
 	//magnify width and height
 	float magw, magh;
-	//collider
-	BoxCollider collider;
 	//how much of the image should be used/cropped and what part
 	SDL_Rect currentFrame;
 

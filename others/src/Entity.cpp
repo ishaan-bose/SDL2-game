@@ -1,7 +1,7 @@
 #include "Entity.hpp"
 
 Entity::Entity(float p_x, float p_y, float p_w, float p_h, float p_mw, float p_mh, SDL_Texture *p_tex)
-	:pos(p_x, p_y), magw(p_mw), magh(p_mh), collider(p_x, p_y, p_w * p_mw, p_h * p_mh), main_tex(p_tex)
+	:pos(p_x, p_y), magw(p_mw), magh(p_mh), main_tex(p_tex)
 {
 	//for debugging only
 	//std::cout << "collider position x is: " << getCollider().getUpLeft().x << "\n";
@@ -71,9 +71,4 @@ void Entity::addVector(Vector2 v)
 	
 	collider.updateRelativePosition(pos.x, pos.y);
 	
-}
-
-BoxCollider Entity::getCollider()
-{
-	return collider;
 }
