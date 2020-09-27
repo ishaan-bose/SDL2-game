@@ -69,6 +69,4 @@ void Entity::addVector(Vector2 v)
 	pos.x += v.getX();
 	pos.y += v.getY();
 	
-	collider.updateRelativePosition(pos.x, pos.y);
-	
 }

@@ -7,7 +7,6 @@
 
 #include "Vector2.hpp"
 #include "Position.hpp"
-#include ".hpp"
 
 class Entity
 {
