@@ -5,7 +5,6 @@
 #include "Entity.hpp"
 #include "Vector2.hpp"
 #include "AnimatedEntity.hpp"
-#include "Collider.hpp"
 
 int main(int argc, char *args[])
 {
@@ -65,35 +64,19 @@ int main(int argc, char *args[])
 				{
 					//move right
 					case SDLK_RIGHT:
-						if(mario->getCollider().checkRight())
-							break;
-						else{
-							mario->addVector(Vector2(5,0));
-						}
+						mario->addVector(Vector2(5,0));
 						break;
 					//move left
 					case SDLK_LEFT:
-						if(mario->getCollider().checkLeft())
-							break;
-						else{
-							mario->addVector(Vector2(-5,0));
-						}
+						mario->addVector(Vector2(-5,0));
 						break;
 					//move up
 					case SDLK_UP:
-					if(mario->getCollider().checkUp())
-						break;
-					else{
 						mario->addVector(Vector2(0,-5));
-					}
 					break;
 					//move down
 					case SDLK_DOWN:
-						if(mario->getCollider().checkDown())
-							break;
-						else{
-							mario->addVector(Vector2(0,5));
-						}
+						mario->addVector(Vector2(0,5));
 						break;
 				}
 			}
