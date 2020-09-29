@@ -4,7 +4,7 @@
 //and they dont rotate.Also the sides of the squares/rectangles should
 //be parallel to the x and y axis
 
-#pragma once //pragma once
+#pragma once
 
 #include <vector>
 #include <iterator>
